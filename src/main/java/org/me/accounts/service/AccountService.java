@@ -28,7 +28,7 @@ public class AccountService {
                 try {
                     createdDate = new SimpleDateFormat("dd/mm/yyyy HH:mm:ss").parse(row[3].trim());
                     amount = Double.valueOf(row[4].trim());
-                    paymentType = (row[5].trim().equals(PaymentType.REVERSAL.name()) ? PaymentType.REVERSAL : PaymentType.PAYMENT);
+                    paymentType = PaymentType.valueOf(row[5].trim());
                 } catch (ParseException e) {
                     System.err.println(e.getMessage());
                 }
