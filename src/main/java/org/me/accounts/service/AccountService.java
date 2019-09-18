@@ -51,9 +51,9 @@ public class AccountService {
                                 relatedTransactionRequest.getToDate().compareTo(t.getCreatedDate())>=0) ).
                 map(t -> t).collect(Collectors.toList());
         double totalCreditAmount = totalTransactionsForGivenAccount.stream().filter(t -> t.getToAccountId().equals(accountId)).
-                map(t -> t.getAmount()).reduce(0.00, (e1, e2) -> e1 + e2);
+                map(Transaction::getAmount).reduce(0.00, (e1, e2) -> e1 + e2);
         double totalDebitAmount = totalTransactionsForGivenAccount.stream().filter(t -> t.getFromAccountId().equals(accountId)).
-                map(t -> t.getAmount()).reduce(0.00, (e1, e2) -> e1 + e2);
+                map(Transaction::getAmount).reduce(0.00, (e1, e2) -> e1 + e2);
         double relativeBalance = totalCreditAmount - totalDebitAmount;
         return new RelatedTransactionResponse(totalTransactionsForGivenAccount, relativeBalance);
     }

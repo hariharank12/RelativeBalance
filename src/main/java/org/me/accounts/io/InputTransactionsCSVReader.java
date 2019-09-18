@@ -9,13 +9,13 @@ import java.io.InputStreamReader;
  */
 public class InputTransactionsCSVReader {
 
-    public String[][] readCSV(String csvFileName) {
+    public String[][] readCSV() {
         String[][] transactionValues = new String[100][10];
-        String line = "";
+        String line;
         String cvsSplitBy = ",";
         int lineCount = 0;
         try (BufferedReader br = new BufferedReader(new InputStreamReader(getClass().
-                getClassLoader().getResourceAsStream(csvFileName)))) {
+                getClassLoader().getResourceAsStream("inputTransactions.csv")))) {
             while ((line = br.readLine()) != null) {
                 transactionValues[lineCount++] = line.split(cvsSplitBy);
             }

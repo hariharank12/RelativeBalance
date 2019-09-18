@@ -7,18 +7,17 @@ import org.me.accounts.response.RelatedTransactionResponse;
 import org.me.accounts.service.AccountService;
 import org.me.accounts.util.DateUtil;
 
-import java.util.Date;
 import java.util.List;
 
 /**
- * Hello world!
+ * Relative Balance App.
  *
  */
-public class App 
+class App
 {
     public static void main( String[] args ) {
         List<Transaction> transactions = AccountService.loadTransactions(new InputTransactionsCSVReader().
-                readCSV("inputTransactions.csv"));
+                readCSV());
         RelatedTransactionRequest relatedTransactionRequest =
                 new RelatedTransactionRequest(transactions, args[0], DateUtil.getDate(args[1]), DateUtil.getDate(args[2]));
         RelatedTransactionResponse relatedTransactionResponse = AccountService.findRelativeBalance(relatedTransactionRequest);

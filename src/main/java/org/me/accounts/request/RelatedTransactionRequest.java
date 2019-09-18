@@ -9,10 +9,10 @@ import java.util.List;
  * Created by hariharank12 on 15/09/19.
  */
 public class RelatedTransactionRequest {
-    private List<Transaction> allTransactionsFromCSV;
-    private String accountId;
-    private Date fromDate;
-    private Date toDate;
+    private final List<Transaction> allTransactionsFromCSV;
+    private final String accountId;
+    private final Date fromDate;
+    private final Date toDate;
 
     public RelatedTransactionRequest(List<Transaction> allTransactionsFromCSV, String accountId, Date fromDate, Date toDate) {
         this.allTransactionsFromCSV = allTransactionsFromCSV;

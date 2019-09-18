@@ -1,6 +1,5 @@
 package org.me.accounts;
 
-import static org.junit.Assert.assertTrue;
 import static org.me.accounts.util.DateUtil.getDate;
 
 import org.junit.After;
@@ -12,7 +11,6 @@ import org.me.accounts.bean.Transaction;
 import org.me.accounts.request.RelatedTransactionRequest;
 import org.me.accounts.response.RelatedTransactionResponse;
 import org.me.accounts.service.AccountService;
-import org.me.accounts.util.DateUtil;
 
 import java.util.*;
 
@@ -21,7 +19,7 @@ import java.util.*;
  */
 public class AppTest 
 {
-    RelatedTransactionRequest relatedTransactionRequest;
+    private RelatedTransactionRequest relatedTransactionRequest;
 
     @Before
     public void setUp() {

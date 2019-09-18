@@ -6,12 +6,12 @@ import java.util.Date;
  * Created by hariharank12 on 15/09/19.
  */
 public class Transaction {
-    private String transactionId;
-    private String fromAccountId;
-    private String toAccountId;
-    private Date createdDate;
-    private Double amount;
-    private PaymentType paymentType;
+    private final String transactionId;
+    private final String fromAccountId;
+    private final String toAccountId;
+    private final Date createdDate;
+    private final Double amount;
+    private final PaymentType paymentType;
     private String relatedTransactionId;
 
     public Transaction(String transactionId, String fromAccountId, String toAccountId, Date createdDate,
@@ -23,10 +23,6 @@ public class Transaction {
         this.amount = amount;
         this.paymentType = paymentType;
         this.relatedTransactionId = relatedTransactionId;
-    }
-
-    public String getTransactionId() {
-        return transactionId;
     }
 
     public String getFromAccountId() {
@@ -43,10 +39,6 @@ public class Transaction {
 
     public Double getAmount() {
         return amount;
-    }
-
-    public PaymentType getPaymentType() {
-        return paymentType;
     }
 
     public String getRelatedTransactionId() {
