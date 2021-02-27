@@ -10,7 +10,7 @@ import org.me.accounts.util.DateUtil;
 import java.util.List;
 
 /**
- * Relative Balance App.
+ * Relative Balance App
  *
  */
 class App
